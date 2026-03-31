@@ -14,9 +14,6 @@ export class AuthService {
     ) { }
 
     async login(loginDto: LoginDto) {
-        console.log('--- DB Config Check ---');
-    console.log('JWT_SECRET from ENV:', this.configService.get('JWT_SECRET'));
-    console.log('-----------------------');
 
         const user = await this.userService.getUserByEmail(loginDto.email)
 
